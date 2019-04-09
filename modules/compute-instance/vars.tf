@@ -10,9 +10,8 @@ variable "compute_display_name" {}
 variable "instance_shape" {}
 variable "instance_count" {}
 variable "subnet_a" {}
-
-# variable "subnet_b" {}
-
+variable "subnet_b" {}
+variable "user_ocid" {}
 variable "ssh_private_key_file" {}
 variable "oci_private_key" {}
 

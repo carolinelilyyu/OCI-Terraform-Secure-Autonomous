@@ -12,10 +12,10 @@ module "compute" {
   instance_shape       = "${var.instance_shape}"
   instance_count       = "${var.instance_count}"
   subnet_a             = "${module.network.subnet_a}"
-
-  # subnet_b             = "${module.network.subnet_b}"
+  subnet_b             = "${module.network.subnet_b}"
   ssh_private_key_file = "${var.ssh_private_key_file}"
   oci_private_key      = "${var.oci_private_key}"
+  user_ocid            = "${var.user_ocid}"
 }
 
 #create VPC, 2 subnets, security lists, route tables, etc.   

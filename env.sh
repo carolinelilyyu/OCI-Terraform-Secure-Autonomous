@@ -1,11 +1,11 @@
 #Enter Your Tenancy OCID
-export TF_VAR_tenancy_ocid="ocid1.tenancy.oc1..aaaaaaaa5arrzhx6wibc7iotaztfkt5bofbrfkw4x56kaplt36tat63lexgq"
+export TF_VAR_tenancy_ocid="ocid1.tenancy.oc1..aaaaaaaaqh3znnfm6hegf55s6o2ijohurcsyxasdsiqpq57z5npkseycos5q"
 #Enter Your Compartment OCID
-export TF_VAR_compartment_ocid="ocid1.compartment.oc1..aaaaaaaaxkrmyyd6ffbggujzbfuxoirbyp7qq3h6gg77x3dtejiydxc665ha"
+export TF_VAR_compartment_ocid="ocid1.compartment.oc1..aaaaaaaahgwc3smj626ovrbsohc44go42piwhzlmmgsnjmpqkdsokam2n4eq"
 #Enter Your User OCID
-export TF_VAR_user_ocid="ocid1.user.oc1..aaaaaaaajxcm3ypgkocore6glozzxfnjemefsjgi6sbxlsjt22kh65exjb2q"
+export TF_VAR_user_ocid="ocid1.user.oc1..aaaaaaaatfv5ry2h7cape2afatj4lcn3ywzqj6seksjmfazipzkyko3wvykq"
 #Enter Your Fingerprint
-export TF_VAR_fingerprint="07:df:a7:ae:8a:b2:a2:50:f5:c7:e1:f6:b1:e2:02:4e"
+export TF_VAR_fingerprint="f5:95:91:14:84:38:b5:3d:4c:2c:1e:e2:69:8e:33:3e"
 #Enter Your Region (Example: us-ashburn-1)
 export TF_VAR_region="us-ashburn-1"
 #Enter Path to Your Private API Key. I'm not using the path one comment below. For my computer specifically, this is the path

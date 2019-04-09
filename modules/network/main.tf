@@ -1,11 +1,5 @@
 # This is the network VCN main.tf
 
-# resource "oci_identity_api_key" "test_api_key" {
-#   #Required
-#   key_value = "${file(var.oci_public_key)}"
-#   user_id   = "${var.user_ocid}"
-# }
-
 resource "oci_core_vcn" "default_vcn" {
   #Required
   cidr_block = "10.0.0.0/16"
@@ -15,10 +9,27 @@ resource "oci_core_vcn" "default_vcn" {
   display_name   = "${var.vcn_display_name}"
 }
 
-resource "oci_core_nat_gateway" "nat_gateway" {
+# resource "oci_core_nat_gateway" "nat_gateway" {
+#   compartment_id = "${var.compartment_ocid}"
+#   vcn_id         = "${oci_core_vcn.default_vcn.id}"
+#   display_name   = "NAT_Gateway"
+# }
+
+resource "oci_core_internet_gateway" "gateway" {
+  compartment_id = "${var.compartment_ocid}"
+  display_name   = "gateway"
+  vcn_id         = "${oci_core_vcn.default_vcn.id}"
+}
+
+resource "oci_core_route_table" "route_table" {
   compartment_id = "${var.compartment_ocid}"
   vcn_id         = "${oci_core_vcn.default_vcn.id}"
-  display_name   = "NAT_Gateway"
+  display_name   = "Route Table"
+
+  route_rules {
+    cidr_block        = "0.0.0.0/0"
+    network_entity_id = "${oci_core_internet_gateway.gateway.id}"
+  }
 }
 
 resource "oci_core_route_table" "private_route_table" {
@@ -30,11 +41,6 @@ resource "oci_core_route_table" "private_route_table" {
     destination       = "${var.destination}"
     destination_type  = "SERVICE_CIDR_BLOCK"
     network_entity_id = "${var.service_gateway_id}"
-  }
-
-  route_rules {
-    cidr_block        = "0.0.0.0/0"
-    network_entity_id = "${oci_core_nat_gateway.nat_gateway.id}"
   }
 }
 
@@ -101,9 +107,7 @@ resource "oci_core_security_list" "private_security_list" {
 
 #actual private instance
 resource "oci_core_subnet" "subnet_a" {
-  availability_domain = "${lookup(
-  data.oci_identity_availability_domains.ads.availability_domains[var.availability_domain],"name")}"
-
+  availability_domain        = "${lookup(data.oci_identity_availability_domains.ads.availability_domains[var.availability_domain],"name")}"
   cidr_block                 = "10.0.1.0/24"
   display_name               = "Subnet A"
   dns_label                  = "subneta"
@@ -116,15 +120,15 @@ resource "oci_core_subnet" "subnet_a" {
   prohibit_public_ip_on_vnic = "true"
 }
 
-# #public subnet
-# resource "oci_core_subnet" "subnet_b" {
-#   availability_domain = "${lookup(data.oci_identity_availability_domains.ads.availability_domains[var.availability_domain],"name")}"
-#   cidr_block          = "10.0.2.0/24"
-#   display_name        = "Subnet B"
-#   dns_label           = "subnetb"
-#   compartment_id      = "${var.compartment_ocid}"
-#   vcn_id              = "${oci_core_vcn.default_vcn.id}"
-#   compartment_id      = "${var.compartment_ocid}"
-#   dhcp_options_id     = "${oci_core_vcn.default_vcn.default_dhcp_options_id}"
-# }
-
+#public subnet
+resource "oci_core_subnet" "subnet_b" {
+  availability_domain = "${lookup(data.oci_identity_availability_domains.ads.availability_domains[var.availability_domain],"name")}"
+  cidr_block          = "10.0.2.0/24"
+  display_name        = "Subnet B"
+  dns_label           = "subnetb"
+  compartment_id      = "${var.compartment_ocid}"
+  vcn_id              = "${oci_core_vcn.default_vcn.id}"
+  compartment_id      = "${var.compartment_ocid}"
+  route_table_id      = "${oci_core_route_table.route_table.id}"
+  dhcp_options_id     = "${oci_core_vcn.default_vcn.default_dhcp_options_id}"
+}

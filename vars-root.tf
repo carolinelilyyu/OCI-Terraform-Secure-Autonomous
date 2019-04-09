@@ -27,7 +27,7 @@ variable "compute_nat_display_name" {
 }
 
 variable "instance_shape" {
-  default = "VM.Standard2.4"
+  default = "VM.Standard2.1"
 }
 
 variable "instance_count" {

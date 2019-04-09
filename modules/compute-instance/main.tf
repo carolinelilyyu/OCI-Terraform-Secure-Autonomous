@@ -3,8 +3,8 @@ resource "oci_core_instance" "PrivateInstance" {
   lookup(data.oci_identity_availability_domains.ads.availability_domains[var.availability_domain],"name")}"
 
   compartment_id = "${var.compartment_ocid}"
-  display_name   = "PrivateInstance"
-  shape          = "${var.instance_shape}"
+  display_name   = "Caroline_Private_Instance"
+  shape          = "VM.Standard2.2"
 
   create_vnic_details {
     subnet_id        = "${var.subnet_a}"
@@ -26,38 +26,32 @@ resource "oci_core_instance" "PrivateInstance" {
   }
 }
 
-# # Create compute instance. This is the compute-instance main.tf
-# resource "oci_core_instance" "PublicInstance" {
-#   availability_domain = "${
-#   lookup(data.oci_identity_availability_domains.ads.availability_domains[var.availability_domain],"name")}"
+# Create compute instance. This is the compute-instance main.tf
+resource "oci_core_instance" "PublicInstance" {
+  availability_domain = "${
+  lookup(data.oci_identity_availability_domains.ads.availability_domains[var.availability_domain],"name")}"
 
+  compartment_id = "${var.compartment_ocid}"
+  display_name   = "Caroline_Public_Instance"
+  shape          = "${var.instance_shape}"
 
-#   compartment_id = "${var.compartment_ocid}"
-#   display_name   = "Caroline Public Instance"
-#   shape          = "${var.instance_shape}"
+  create_vnic_details {
+    subnet_id        = "${var.subnet_b}"
+    display_name     = "primaryvnic"
+    assign_public_ip = true
+    hostname_label   = "${var.compute_hostname}"
+  }
 
+  source_details {
+    source_type = "image"
+    source_id   = "${var.InstanceImageOCID[var.region]}"
+  }
 
-#   create_vnic_details {
-#     subnet_id        = "${var.subnet_b}"
-#     display_name     = "primaryvnic"
-#     assign_public_ip = true
-#     hostname_label   = "${var.compute_hostname}"
-#   }
+  metadata {
+    ssh_authorized_keys = "${var.ssh_public_key}"
+  }
 
-
-#   source_details {
-#     source_type = "image"
-#     source_id   = "${var.InstanceImageOCID[var.region]}"
-#   }
-
-
-#   metadata {
-#     ssh_authorized_keys = "${var.ssh_public_key}"
-#   }
-
-
-#   timeouts = {
-#     create = "60m"
-#   }
-# }
-
+  timeouts = {
+    create = "60m"
+  }
+}
