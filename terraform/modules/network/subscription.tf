@@ -19,6 +19,7 @@ resource "oci_core_app_catalog_listing_resource_version_agreement" "test_app_cat
 }
 
 resource "oci_core_app_catalog_subscription" "test_app_catalog_subscription" {
+  depends_on               = ["null_resource.delay"]
   compartment_id           = "${oci_identity_compartment.compartment1.id}"
   eula_link                = "${oci_core_app_catalog_listing_resource_version_agreement.test_app_catalog_listing_resource_version_agreement.eula_link}"
   listing_id               = "${oci_core_app_catalog_listing_resource_version_agreement.test_app_catalog_listing_resource_version_agreement.listing_id}"
