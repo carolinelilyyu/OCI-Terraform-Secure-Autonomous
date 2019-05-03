@@ -7,7 +7,15 @@ Welcome to the Citizen's Terraform workshop
 [https://www.terraform.io/downloads.html](https://www.terraform.io/downloads.html)
 
 ## Customize Environment Variables
-Sign into your OCI tenancy using your OCI credentials (tenancy name, username, and password)
+
+
+First, change directory to "../terraform"
+
+```sh
+cd ../terraform
+```
+
+Then sign into your OCI tenancy using your OCI credentials (tenancy name, username, and password)
 
 Upon entering the OCI Console, hover your mouse over the user menu in the top right corner. From the resulting drop-down list, and click on Tenancy: <your tenancy's name>.
 
@@ -80,13 +88,6 @@ You are now authenticated to use Terraform with your OCI tenancy!!!
 
 
 ## Save Environment Variables
-
-First, change directory to "../terraform"
-
-```sh
-cd ../terraform
-```
-
 
 Run this command to save environment variables to command line interface instance 
 ```sh

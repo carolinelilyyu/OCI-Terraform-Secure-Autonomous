@@ -59,5 +59,5 @@ variable "compartment_description" {
 }
 
 variable "compartment_name" {
-  default = "LABS"
+  default = "LABS_Compartment"
 }
