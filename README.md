@@ -112,6 +112,10 @@ terraform init
 ```
 
 ```sh
+terraform plan
+```
+
+```sh
 terraform apply \
   -var 'input_service=atp' \
   -var 'input_service_name=labs_autonomous'
