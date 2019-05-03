@@ -9,10 +9,10 @@ Welcome to the Citizen's Terraform workshop
 ## Customize Environment Variables
 
 
-First, change directory to "../terraform"
+First, change directory to "Repo/terraform"
 
 ```sh
-cd ../terraform
+cd Repo/terraform
 ```
 
 Then sign into your OCI tenancy using your OCI credentials (tenancy name, username, and password)
@@ -59,10 +59,10 @@ In env.sh, paste your user OCID in its designated position.
 
 #### Uploading API Key to OCI
 
-Change directory into 'Repo/.oci'
+Change directory into '../.oci'
 
 ```sh
-cd Repo/.oci
+cd ../.oci
 ```
 
 Copy the oci_api_key_public.pem to your clipboard to copy the contents of the file containing your API public key.
