@@ -85,7 +85,7 @@ Run this command to save environment variables to command line interface instanc
 source env.sh
 ```
 
-## Run Terraform Script
+## Clean Terraform Script
 First, change directory to "../terraform"
 
 ```sh
@@ -104,3 +104,15 @@ rm -f terraform.tfstate.backup
 ```
 
 
+## Run Terraform Script
+Initialize the Terraform project 
+
+```sh
+terraform init
+```
+
+```sh
+terraform apply \
+  -var 'input_service=atp' \
+  -var 'input_service_name=labs_autonomous'
+```
