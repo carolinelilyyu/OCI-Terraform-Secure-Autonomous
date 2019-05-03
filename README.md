@@ -12,7 +12,7 @@ Upon entering the OCI Console, hover your mouse over the user menu in the top ri
 
 Format: ![Alt Text](http://imgur.com/N3huuTX)
 
-![Alt Text](https://alm.oraclecorp.com/natd-soleng/#projects/citizens/scm/Repo.git/README pics)
+![Alt Text](/pics/1.png)
 
 ![Fn Project](http://fnproject.io/images/fn-300x125.png)
 
