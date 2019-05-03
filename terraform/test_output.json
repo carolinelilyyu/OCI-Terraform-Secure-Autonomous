@@ -1,0 +1,72 @@
+#!/bin/sh
+echo 'This compute instance was provisioned by Terraform.' >> /tmp/motd
+mkdir /home/opc/.oci/
+chmod 700 /home/opc/.oci
+chown -R opc:opc /home/opc/.oci
+cd /home/opc/.oci/
+touch /home/opc/.oci/oci_private_key.pem
+chmod 700 /home/opc/.oci/oci_private_key.pem 
+echo "-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAuJtRXF+pcaNRG1VIOL7da+yp8HGjgKjloUj5G5zV2S/keadW
+HauT2zxbDf3wTXSWkqyvgOxjun6yET84ZUGqwd1c8ukQfqpezpLYFSQWV7H3Tw19
+isvhQXwpxnBykGvGHPyjhgKvCPNC2ooXtYVYGU9DDiNWiynnQrE1/emhXTbVdGhB
+30bJxqEcdJdDP4KURrQzUyZV4lAhAN4digluxYeSm2nPHfpG/DI50KJ47qbFZx+4
+J+WmZiyTk44+t0mteXY7OXJ3v5Y7jaInjispvFs41sJpYYtfiibaln3fDGjKmtaI
+T9YmqRR0kWol4L24/Pmix+4d7nlvYx/P9AaHewIDAQABAoIBAQCsLFfGgoXjMYGc
+r35rRj/2v0SDt0jZ3yxDr259/VlJdaxudc4QYAzHZVQ7CYLMipdAdwQ8hrxAnJdx
+FHiBn6wloVJmT06OBFHl8fjMRtr7sUTJmvhiseIFlErWA9wlrA6azFmqy+f5vf+1
+GSQhrRrMiCsvDXBS3KMOhX6osPRJnRnIUAreiTwHG4ufooHZQF6ZpGCsPk0k82Sa
+eHERPnkwUqUTAqrHBOu2px83Hriug5QoAMv1V3fnHXDOe6ga3pG6vm6MroslC6Jy
+hwWt1rL5xYl6uQCM01PFVCndcEEiMw1pMhKrfBe3T9rgT2C5RXMmWju+xOjjnBxZ
+efZhC3/ZAoGBAPHfYRFoYHKtg/nD+RoXWXGWftWzdyy1/QfOfoX4JCrb8BQrahFC
+eE40jqI1ynUkKwuW7RoBfROp+Smd0rv9SU9Y5RHRh/JhqeMwpyDC2kDhPARNmP9V
+IEy2360u+lacsw6A436WEWk0NgCXivXTdGn0iRc7/s/4o4umDVpHUBvNAoGBAMNj
+qnGAc+oGjIlRlMKf7GxBXabD5WsXY6xdb+P9kddlJHYTMBieY7M24EsfKg47OOQF
+MTK3Sq9DZIwBt6WHaI6SWnuJnEJyxfyjp+A2Xvl/iOMOVIb4Iov+Ws+p/VemQMde
++Fp9czB18FLYmnDyTxdJr+rhUYRQReA7AyO6ELhnAoGAd80p2iJ16zdQsEzGPIsm
+LWHajuTmeYnmu5AnERpYZ7YqkwLx9XyT9ECKCYRVNHJms8XcyM3F8xB0ro1SjPSm
+9BtW0t2S1ZZUPIijr1F0I0CspoD88DNs3TKTVcd4DaBt/BgRFmkkVJSczuxA0wQa
+nESYBp8b1k0UTJ5B7N53ql0CgYA1pkknrzikurWeAuuQ4S6ervgTEVkOJbb1nhZa
+CMch2KDBVxVuvRbtH5VIqz7192bwnUhb/54fL6cNFm+hoOOhuifkIe3pBPC+JQW0
+d9luMomYpteo07tQqz+uI6PvjDPfSoFw/19AoDGj3dvSRYZYA6CtIr8qUIxPPITp
+K27p4wKBgGEBeN2S99GmCp5uupxc6sJg+0c7Bmw6oOzy8ILFU/HuebWUKXqRyyrm
+DTCheXNZB5eR1VV0sifI4pT3Jxr64n49CqozzlO1ejlD11nuPwYEuAsIbEMYgZBI
+hbhW8eql+ONMIimRqqK5qwInvhQfFdJCuL1mIKC4K0ItTvQw6MJC
+-----END RSA PRIVATE KEY-----
+" >> /home/opc/.oci/oci_private_key.pem
+touch /home/opc/.oci/oci_public_key.pem
+chmod 700 /home/opc/.oci/oci_public_key.pem 
+echo "-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuJtRXF+pcaNRG1VIOL7d
+a+yp8HGjgKjloUj5G5zV2S/keadWHauT2zxbDf3wTXSWkqyvgOxjun6yET84ZUGq
+wd1c8ukQfqpezpLYFSQWV7H3Tw19isvhQXwpxnBykGvGHPyjhgKvCPNC2ooXtYVY
+GU9DDiNWiynnQrE1/emhXTbVdGhB30bJxqEcdJdDP4KURrQzUyZV4lAhAN4diglu
+xYeSm2nPHfpG/DI50KJ47qbFZx+4J+WmZiyTk44+t0mteXY7OXJ3v5Y7jaInjisp
+vFs41sJpYYtfiibaln3fDGjKmtaIT9YmqRR0kWol4L24/Pmix+4d7nlvYx/P9AaH
+ewIDAQAB
+-----END PUBLIC KEY-----
+" >> oci_public_key.pem
+touch /home/opc/.oci/config
+chmod 700 /home/opc/.oci/config
+echo "[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaavd2hf6phseyncvjktrqcwxcxtmkpzg3msq7a6dtue5vo4s3oraea
+fingerprint=59:a2:af:2f:cd:eb:a1:a2:85:82:67:88:db:fc:db:dc
+key_file=/home/opc/.oci/oci_private_key.pem
+tenancy=ocid1.tenancy.oc1..aaaaaaaaqh3znnfm6hegf55s6o2ijohurcsyxasdsiqpq57z5npkseycos5q
+region=us-ashburn-1
+" >> /home/opc/.oci/config
+if [atp = "atp"]
+then
+	echo "/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-database create --compartment-id ocid1.compartment.oc1..aaaaaaaa2nr22g4agx6miseztllf6zmhmo62no3xloc32jmaxpvxoo4hmabq --db-name testingatp --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##" >> /home/opc/.oci/script.sh
+	oci setup repair-file-permissions --file /home/opc/.oci/config 
+	oci setup repair-file-permissions --file /home/opc/.oci/oci_private_key.pem 
+	chown -R opc:opc /home/opc/.oci
+	/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-database create --compartment-id ocid1.compartment.oc1..aaaaaaaa2nr22g4agx6miseztllf6zmhmo62no3xloc32jmaxpvxoo4hmabq --db-name testingatp --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##
+else
+	echo "/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-data-warehouse create --compartment-id ocid1.compartment.oc1..aaaaaaaa2nr22g4agx6miseztllf6zmhmo62no3xloc32jmaxpvxoo4hmabq --db-name testingadw --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##" >> /home/opc/.oci/script.sh
+	oci setup repair-file-permissions --file /home/opc/.oci/config 
+	oci setup repair-file-permissions --file /home/opc/.oci/oci_private_key.pem 
+	chown -R opc:opc /home/opc/.oci
+	/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-data-warehouse create --compartment-id ocid1.compartment.oc1..aaaaaaaa2nr22g4agx6miseztllf6zmhmo62no3xloc32jmaxpvxoo4hmabq --db-name testingadw --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##
+
+
