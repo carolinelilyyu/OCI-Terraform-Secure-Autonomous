@@ -10,7 +10,7 @@ Sign into your OCI tenancy using your OCI credentials (tenancy name, username, a
 
 Upon entering the OCI Console, hover your mouse over the user menu in the top right corner. From the resulting drop-down list, and click on Tenancy: <your tenancy's name>.
 
-![Tenancy pic](https://alm.oraclecorp.com/natd-soleng/#projects/citizens/scm/Repo.git/blob/README%20pics/1.png?revision=master)
+![Tenancy pic](/README%20pics/1.png)
 
 
 Run this command to save environment variables to command line interface instance 
