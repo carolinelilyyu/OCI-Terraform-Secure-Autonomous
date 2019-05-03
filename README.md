@@ -15,11 +15,11 @@ First, change directory to "Repo/terraform"
 cd Repo/terraform
 ```
 
-Then sign into your OCI tenancy using your OCI credentials (tenancy name, username, and password)
+#### Replacing Tenancy OCID environment variable
+
+Sign into your OCI tenancy using your OCI credentials (tenancy name, username, and password)
 
 Upon entering the OCI Console, hover your mouse over the user menu in the top right corner. From the resulting drop-down list, and click on Tenancy: <your tenancy's name>.
-
-#### Replacing Tenancy OCID environment variable
 
 The OCI Console’s main dashboard.
 
@@ -113,12 +113,6 @@ Initialize the Terraform project
 
 ```sh
 terraform init
-```
-
-Plan the changes to your Terraform project
-
-```sh
-terraform plan
 ```
 
 Apply changes to your Terraform project. The variable "input_service" will either be "atp", standing for Autonomous Transaction Processing or "adw", standing for Autonomous Data Warehouse. The variable "input_service_name" will be the name for the Autonomous Transaction Processing or Autonomous Data Warehouse.
