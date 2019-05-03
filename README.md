@@ -4,7 +4,7 @@ Welcome to the Citizen's Terraform workshop
 ## Pre-requisites
 
 ### Install Terraform
-(https://www.terraform.io/downloads.html)
+[I'm an inline-style link](https://www.terraform.io/downloads.html)
 
 ## Customize Environment Variables
 Sign into your OCI tenancy using your OCI credentials (tenancy name, username, and password)
