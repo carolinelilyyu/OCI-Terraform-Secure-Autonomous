@@ -80,17 +80,20 @@ You are now authenticated to use Terraform with your OCI tenancy!!!
 
 
 ## Save Environment Variables
+
+First, change directory to "../terraform"
+
+```sh
+cd ../terraform
+```
+
+
 Run this command to save environment variables to command line interface instance 
 ```sh
 source env.sh
 ```
 
 ## Clean Terraform Script
-First, change directory to "../terraform"
-
-```sh
-cd ../terraform
-```
 
 Run these few commands to clean up Terraform repository to make sure no elements of previous deployments are needed.
 ```sh
@@ -111,9 +114,17 @@ Initialize the Terraform project
 terraform init
 ```
 
+Plan the changes to your Terraform project
+
 ```sh
 terraform plan
 ```
+
+Apply changes to your Terraform project. The variable "input_service" will either be "atp", standing for Autonomous Transaction Processing or "adw", standing for Autonomous Data Warehouse. The variable "input_service_name" will be the name for the Autonomous Transaction Processing or Autonomous Data Warehouse.
+
+
+##### [Optional]
+This Terraform project currently has default attributes that can be changed easily inside vars-root.tf. For example, you can change the display name of the Frontend (Public) instance simply by replacing the word "Bastion_Instance"
 
 ```sh
 terraform apply \
