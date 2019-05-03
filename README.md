@@ -1,4 +1,5 @@
 ## Welcome
+Welcome to the Citizen's Terraform workshop
 
 ## Pre-requisites
 
@@ -78,13 +79,13 @@ Under the API Keys section, find the resulting fingerprint
 You are now authenticated to use Terraform with your OCI tenancy!!! 
 
 
-### Save Environment Variables
+## Save Environment Variables
 Run this command to save environment variables to command line interface instance 
 ```sh
 source env.sh
 ```
 
-### Run Terraform Script
+## Run Terraform Script
 First, change directory to "../terraform"
 
 ```sh
