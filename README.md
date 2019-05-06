@@ -10,8 +10,7 @@ Welcome to the Citizen's Terraform workshop
 
 This is what we will be provisioning with Terraform
 
-![Alt Text](/pics/15.png)
-<img src="/pics/14.png" width="40%">
+![Alt Text](/pics/14.png)
 
 ## Customize Environment Variables
 
