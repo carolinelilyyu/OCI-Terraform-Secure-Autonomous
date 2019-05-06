@@ -10,7 +10,7 @@ Welcome to the Citizen's Terraform workshop
 
 This is what we will be provisioning with Terraform
 
-![Alt Text](/pics/14.png)
+![Alt Text](/pics/14.png) =250x250
 
 ## Customize Environment Variables
 
