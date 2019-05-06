@@ -6,6 +6,12 @@ Welcome to the Citizen's Terraform workshop
 ### Install Terraform
 [https://www.terraform.io/downloads.html](https://www.terraform.io/downloads.html)
 
+## Architecture Diagram
+
+This is what we will be provisioning with Terraform
+
+![Alt Text](/pics/14.png)
+
 ## Customize Environment Variables
 
 
