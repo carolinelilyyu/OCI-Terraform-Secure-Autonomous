@@ -139,4 +139,3 @@ terraform apply \
 
 ##### [Optional]
 This Terraform project currently has default attributes that can be changed easily inside vars-root.tf. For example, you can change the display name of the Frontend (Public) instance simply by replacing the word "Bastion_Instance"
-
