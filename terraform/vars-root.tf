@@ -43,7 +43,7 @@ variable "compute_frontend_display_name" {
 }
 
 variable "instance_frontend_shape" {
-  default = "VM.Standard2.1"
+  default = "VM.Standard2.2"
 }
 
 variable "compute_backend_display_name" {
@@ -59,5 +59,5 @@ variable "compartment_description" {
 }
 
 variable "compartment_name" {
-  default = "LABSTest4"
+  default = "LABS"
 }

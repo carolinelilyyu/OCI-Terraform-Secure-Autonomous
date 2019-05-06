@@ -49,26 +49,26 @@ ewIDAQAB
 touch /home/opc/.oci/config
 chmod 700 /home/opc/.oci/config
 echo "[DEFAULT]
-user=ocid1.user.oc1..aaaaaaaavd2hf6phseyncvjktrqcwxcxtmkpzg3msq7a6dtue5vo4s3oraea
+user=ocid1.user.oc1..aaaaaaaaes2w2nmb5z7y27qjgdo5pzwxdafcahbvytzyfw23xbsawfqxcgia
 fingerprint=59:a2:af:2f:cd:eb:a1:a2:85:82:67:88:db:fc:db:dc
 key_file=/home/opc/.oci/oci_private_key.pem
-tenancy=ocid1.tenancy.oc1..aaaaaaaaqh3znnfm6hegf55s6o2ijohurcsyxasdsiqpq57z5npkseycos5q
+tenancy=ocid1.tenancy.oc1..aaaaaaaaa5jn745fyrmpizutz5q2gjjduhot4ny2wxda7fobvkeu5wkpeysa
 region=us-ashburn-1
 " >> /home/opc/.oci/config
-if [ atp = "atp" ]
+if [ adw = "atp" ]
 then
-	echo "/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-database create --compartment-id ocid1.compartment.oc1..aaaaaaaaxgrejujxqu4fbdh4yu3otjb7tslbqqm4vjerfqnruuatu55wmxbq --db-name labsatp --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##" >> /home/opc/.oci/script.sh
+	echo "/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-database create --compartment-id ocid1.compartment.oc1..aaaaaaaahcr7r5vrtfqf4sf7x4tr5j3jid5a4reqnnsjuq7pn22wetjfcmra --db-name atpdb1 --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##" >> /home/opc/.oci/script.sh
 	oci setup repair-file-permissions --file /home/opc/.oci/config 
 	oci setup repair-file-permissions --file /home/opc/.oci/oci_private_key.pem 
 	chown -R opc:opc /home/opc/.oci
-	/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-database create --compartment-id ocid1.compartment.oc1..aaaaaaaaxgrejujxqu4fbdh4yu3otjb7tslbqqm4vjerfqnruuatu55wmxbq --db-name labsatp --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##
-elif [ atp = "adw" ]
+	/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-database create --compartment-id ocid1.compartment.oc1..aaaaaaaahcr7r5vrtfqf4sf7x4tr5j3jid5a4reqnnsjuq7pn22wetjfcmra --db-name atpdb1 --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##
+elif [ adw = "adw" ]
 then
-	echo "/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-data-warehouse create --compartment-id ocid1.compartment.oc1..aaaaaaaaxgrejujxqu4fbdh4yu3otjb7tslbqqm4vjerfqnruuatu55wmxbq --db-name labsadw --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##" >> /home/opc/.oci/script.sh
+	echo "/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-data-warehouse create --compartment-id ocid1.compartment.oc1..aaaaaaaahcr7r5vrtfqf4sf7x4tr5j3jid5a4reqnnsjuq7pn22wetjfcmra --db-name adwdb1 --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##" >> /home/opc/.oci/script.sh
 	oci setup repair-file-permissions --file /home/opc/.oci/config 
 	oci setup repair-file-permissions --file /home/opc/.oci/oci_private_key.pem 
 	chown -R opc:opc /home/opc/.oci
-	/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-data-warehouse create --compartment-id ocid1.compartment.oc1..aaaaaaaaxgrejujxqu4fbdh4yu3otjb7tslbqqm4vjerfqnruuatu55wmxbq --db-name labsadw --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##
+	/usr/bin/oci --config-file /home/opc/.oci/config db autonomous-data-warehouse create --compartment-id ocid1.compartment.oc1..aaaaaaaahcr7r5vrtfqf4sf7x4tr5j3jid5a4reqnnsjuq7pn22wetjfcmra --db-name adwdb1 --cpu-core-count 1 --data-storage-size-in-tbs 1 --admin-password Hell0W0rld##
 else
 	echo "did not specify which resource to create" >> /home/opc/.oci/script.sh
 fi

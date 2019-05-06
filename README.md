@@ -120,7 +120,7 @@ Plan the changes to your Terraform project
 ```sh
 terraform plan \
   -var 'input_service=atp' \
-  -var 'input_service_name=labs'
+  -var 'input_service_name=db1'
 ```
 
 Apply changes to your Terraform project. The variable "input_service" will either be "atp", standing for Autonomous Transaction Processing or "adw", standing for Autonomous Data Warehouse. The variable "input_service_name" will be the name for the Autonomous Transaction Processing or Autonomous Data Warehouse.
@@ -128,7 +128,7 @@ Apply changes to your Terraform project. The variable "input_service" will eithe
 ```sh
 terraform apply \
   -var 'input_service=atp' \
-  -var 'input_service_name=labs'
+  -var 'input_service_name=db1'
 ```
 
 ##### [Optional]
