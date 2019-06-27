@@ -1,5 +1,5 @@
 ## Welcome
-Welcome to the Citizen's Terraform workshop
+Welcome to the OCI-Terraform workshop to create a secure architecture for ADW/ATP
 
 ## Pre-requisites
 
