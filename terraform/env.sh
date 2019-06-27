@@ -14,3 +14,4 @@ export TF_VAR_oci_private_key="../.oci/oci_api_key.pem"
 export TF_VAR_oci_public_key="../.oci/oci_api_key_public.pem"
 #Path to your public SSH Key for your public instance
 export TF_VAR_ssh_public_key="../.ssh/id_rsa.pub"
+

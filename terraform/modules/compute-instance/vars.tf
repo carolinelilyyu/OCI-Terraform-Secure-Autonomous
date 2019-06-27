@@ -31,7 +31,7 @@ variable "DeveloperInstanceImageOCID" {
 
   # default = {  #   us-ashburn-1 = "ocid1.image.oc1..aaaaaaaapa4matxgu5slju7ikdgukbsbi2zbb5mhsurxicwtsrv4bev6ln4a" #   // See https://docs.us-phoenix-1.oraclecloud.com/images/  // Oracle-provided image "Oracle-Developer-Linux"  # }
 
-  default = "ocid1.image.oc1..aaaaaaaapa4matxgu5slju7ikdgukbsbi2zbb5mhsurxicwtsrv4bev6ln4a"
+  default = "ocid1.image.oc1..aaaaaaaanqr276n5ia2hgmjr25gvdn3ejtok4apli2yecbqobmkyve5v47mq"
 }
 
 variable "compute_hostname1" {

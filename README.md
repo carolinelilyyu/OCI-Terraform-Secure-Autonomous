@@ -92,6 +92,11 @@ Under the API Keys section, find the resulting fingerprint
 
 You are now authenticated to use Terraform with your OCI tenancy!!! 
 
+#### Make Developer Image
+
+#### Replacing Developer Image OCID environment variable
+
+
 
 ## Save Environment Variables
 
