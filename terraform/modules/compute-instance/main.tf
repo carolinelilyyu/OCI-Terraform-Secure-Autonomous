@@ -19,7 +19,7 @@ resource "oci_core_instance" "PrivateInstance" {
 
   source_details {
     source_type = "image"
-    source_id   = "${var.DeveloperInstanceImageOCID}"
+    source_id   = "${var.developer_image_ocid}"
   }
 
   timeouts {

@@ -92,12 +92,7 @@ Under the API Keys section, find the resulting fingerprint
 
 You are now authenticated to use Terraform with your OCI tenancy!!! 
 
-<!-- #### Make Developer Image
 
-#### Replacing Developer Image OCID if needed
-
-
- -->
 ## Save Environment Variables
 
 Run this command to save environment variables to command line interface instance 
@@ -142,5 +137,53 @@ terraform apply \
   -var 'input_service_name=db1'
 ```
 
-##### [Optional]
+
+## Frequently Asked Questions
+
+### How can I customize my resources?
+
 This Terraform project currently has default attributes that can be changed easily inside vars-root.tf. For example, you can change the display name of the Frontend (Public) instance simply by replacing the word "Bastion_Instance"
+
+### How come I receive this error upon applying Terraform?
+
+```
+* module.compute.oci_core_instance.PrivateInstance: 1 error(s) occurred:
+
+* oci_core_instance.PrivateInstance: Service error:NotAuthorizedOrNotFound. Image can't be launched, reason: no subscription found
+```
+
+#### Make Developer Image
+
+There should be a value for the variable "TF_VAR_developer_image_ocid"; however, to double check if it's correct, please make a Compute Instance with the Oracle Developer Image and copy it's OCID
+
+Return to the OCI Console and create a Compute Instance.
+
+![Alt Text](/pics/16.png)
+
+Change the image source
+
+![Alt Text](/pics/17.png)
+
+Select the Oracle Images tab and select Developer Image. Then hit the Create Instance button 
+
+![Alt Text](/pics/18.png)
+
+
+#### Replacing Developer Image OCID if needed
+
+Click on Published Image: OL Developer Image
+
+![Alt Text](/pics/19.png)
+
+Copy the OCID 
+
+![Alt Text](/pics/20.png)
+
+In env.sh, paste your tenancy OCID in its designated position.
+
+
+#### [Important] Terminate the created instance to FREE UP SPACE
+
+All tenancies start with limited service limits. Make sure to delete the instance you've just obtained the developer image OCID from 
+
+![Alt Text](/pics/21.png)

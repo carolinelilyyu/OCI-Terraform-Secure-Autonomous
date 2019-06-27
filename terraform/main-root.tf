@@ -47,4 +47,5 @@ module "compute" {
   fingerprint                   = "${var.fingerprint}"
   input_service                 = "${var.input_service}"
   input_service_name            = "${var.input_service_name}"
+  developer_image_ocid          = "${var.developer_image_ocid}"
 }

@@ -20,6 +20,8 @@ variable "fingerprint" {}
 variable "input_service" {}
 variable "input_service_name" {}
 
+variable "developer_image_ocid" {}
+
 #Network User Variables
 variable "vcn_display_name" {
   default = "VCN"

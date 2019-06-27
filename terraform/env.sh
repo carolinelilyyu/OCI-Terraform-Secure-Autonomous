@@ -8,6 +8,8 @@ export TF_VAR_region="us-ashburn-1"
 export TF_VAR_user_ocid=""
 #Fingerprint
 export TF_VAR_fingerprint=""
+#Developer image ocid
+export TF_VAR_developer_image_ocid="ocid1.image.oc1..aaaaaaaanqr276n5ia2hgmjr25gvdn3ejtok4apli2yecbqobmkyve5v47mq"
 #Path to your private API key
 export TF_VAR_oci_private_key="../.oci/oci_api_key.pem"
 #Path to your public API key

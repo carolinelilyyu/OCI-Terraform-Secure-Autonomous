@@ -18,6 +18,7 @@ variable "oci_private_key" {}
 variable "fingerprint" {}
 variable "input_service" {}
 variable "input_service_name" {}
+variable "developer_image_ocid" {}
 
 variable "InstanceImageOCID" {
   # type = "map"
@@ -26,13 +27,13 @@ variable "InstanceImageOCID" {
   default = "ocid1.image.oc1.iad.aaaaaaaa2tq67tvbeavcmioghquci6p3pvqwbneq3vfy7fe7m7geiga4cnxa"
 }
 
-variable "DeveloperInstanceImageOCID" {
-  #type = "map"
+# variable "DeveloperInstanceImageOCID" {
+#   #type = "map"
 
-  # default = {  #   us-ashburn-1 = "ocid1.image.oc1..aaaaaaaapa4matxgu5slju7ikdgukbsbi2zbb5mhsurxicwtsrv4bev6ln4a" #   // See https://docs.us-phoenix-1.oraclecloud.com/images/  // Oracle-provided image "Oracle-Developer-Linux"  # }
+#   # default = {  #   us-ashburn-1 = "ocid1.image.oc1..aaaaaaaapa4matxgu5slju7ikdgukbsbi2zbb5mhsurxicwtsrv4bev6ln4a" #   // See https://docs.us-phoenix-1.oraclecloud.com/images/  // Oracle-provided image "Oracle-Developer-Linux"  # }
 
-  default = "ocid1.image.oc1..aaaaaaaanqr276n5ia2hgmjr25gvdn3ejtok4apli2yecbqobmkyve5v47mq"
-}
+#   default = "ocid1.image.oc1..aaaaaaaanqr276n5ia2hgmjr25gvdn3ejtok4apli2yecbqobmkyve5v47mq"
+# }
 
 variable "compute_hostname1" {
   default = "bastion1"
