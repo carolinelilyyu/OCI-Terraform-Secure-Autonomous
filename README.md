@@ -187,3 +187,10 @@ In env.sh, paste your tenancy OCID in its designated position.
 All tenancies start with limited service limits. Make sure to delete the instance you've just obtained the developer image OCID from 
 
 ![Alt Text](/pics/21.png)
+
+### How can I fully manage access/traffic to ADW/ATP to be only from the private instance?
+
+The newly created Autonomous Database does not have an access control list. Without one, the database can be accessed by any client with the applicable credentials to connect to it. To create an ACL, you must add at least one CIDR block or public IP address to the list.
+
+You can find more information on access control lists for an Autonomous Database through this link:
+https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/adbmanaging.htm#acl
