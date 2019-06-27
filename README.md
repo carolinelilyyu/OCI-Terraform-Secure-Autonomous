@@ -92,12 +92,12 @@ Under the API Keys section, find the resulting fingerprint
 
 You are now authenticated to use Terraform with your OCI tenancy!!! 
 
-#### Make Developer Image
+<!-- #### Make Developer Image
 
-#### Replacing Developer Image OCID environment variable
+#### Replacing Developer Image OCID if needed
 
 
-
+ -->
 ## Save Environment Variables
 
 Run this command to save environment variables to command line interface instance 
