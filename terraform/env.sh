@@ -1,11 +1,11 @@
 #Define authentication variables
 
 #Enter your tenancy OCID
-export TF_VAR_tenancy_ocid=""
+export TF_VAR_tenancy_ocid="ocid1.tenancy.oc1..aaaaaaaawgan7uufjjwa5wlicbocjs7l6hmyqrwhpqquncaweqgfsfvf4q7q"
 #Enter your region (e.g. us-ashburn-1)
 export TF_VAR_region="us-ashburn-1"
 #Enter your user OCID
-export TF_VAR_user_ocid=""
+export TF_VAR_user_ocid="ocid1.user.oc1..aaaaaaaapojltszogsvqwohv6c6zofuhahp754qwgospfamkjefkfn37x24a"
 #Fingerprint
 export TF_VAR_fingerprint=""
 #Developer image ocid
